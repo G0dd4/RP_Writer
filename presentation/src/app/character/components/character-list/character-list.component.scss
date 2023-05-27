@@ -1,4 +1,19 @@
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Create 2 columns and auto-place rows */
+
+app-character-card{
+    margin-bottom: 20px;
+}
+
+@media (width >= 750px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 33% 33% 33%; /* Create 2 columns and auto-place rows */
+        
+    }        
+}
+
+@media (width < 750px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Create 2 columns and auto-place rows */
+    }        
 }

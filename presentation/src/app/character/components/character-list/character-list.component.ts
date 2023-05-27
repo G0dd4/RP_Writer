@@ -13,29 +13,29 @@ export class CharacterListComponent {
       Id : 0,
       Firstname : "Jimmy",
       Lastname : "Jones",
-      Image : "",
+      Image : "../../../../assets/first.jpg",
       Description : ""
     },
     {
       Id : 1,
       Firstname : "Archibal",
       Lastname : "McKenzies",
-      Image : "",
-      Description : ""
+      Image : "../../../../assets/second.jpg",
+      Description : "RP Cosmos"
     },
     {
       Id : 2,
       Firstname : "Chip",
       Lastname : "O'Brien",
-      Image : "",
-      Description : ""
+      Image : "../../../../assets/third.jpg",
+      Description : "RP Imperium"
     },
     {
       Id : 3,
       Firstname : "Dave",
       Lastname : "Rumjacks",
       Image : "",
-      Description : ""
+      Description : "RP Missclick"
     }
   ]
 
