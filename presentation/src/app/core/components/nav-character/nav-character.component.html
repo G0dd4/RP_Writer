@@ -1,0 +1,25 @@
+<div>
+    <div class="left-nav">
+        <div class="character-info" >
+            <div class="character-image" [ngStyle]="HasImage()">
+
+            </div>
+            <div class="character-name">
+                <span>
+                    {{characterInfo.Firstname}}  {{characterInfo.Lastname}}
+                </span>
+            </div>
+        </div>
+        <div class="search-bar">
+
+        </div>
+        <div class="item-list">
+            <ol>
+                <li *ngFor="let item of this.pagesName">
+                    <img src="{{GetRightImage(item.type)}}" width="10" height="10">
+                    <span>{{item.name}}</span>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
