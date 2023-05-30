@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { NavCharacterComponent } from './components/nav-character/nav-character.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   exports: [
     HeaderComponent,

@@ -16,7 +16,7 @@
         <div class="item-list">
             <ol>
                 <li *ngFor="let item of this.pagesName">
-                    <img src="{{GetRightImage(item.type)}}" width="10" height="10">
+                    <mat-icon svgIcon="{{item.type}}"></mat-icon>
                     <span>{{item.name}}</span>
                 </li>
             </ol>

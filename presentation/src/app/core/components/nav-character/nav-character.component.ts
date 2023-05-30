@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Character } from 'src/app/character/models/character-card.model';
 
 
@@ -20,26 +22,24 @@ export class NavCharacterComponent{
   pagesName : Array<{name: string,type: string}> = [
     {name: "First try", type: "note"},
     {name: "Family", type: "tree"},
-    {name: "Array", type: "table"},
-    {name: "relation ship", type: "relation"}
+    {name: "Relation ship", type: "relation"},
+    {name: "Add new", type: "add"}
   ];
   
   
-  
+  constructor(private matIconRegistry : MatIconRegistry,
+    private domSanitizer: DomSanitizer
+    ){
+    matIconRegistry.addSvgIcon('note', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/i-noter.svg'));
+    matIconRegistry.addSvgIcon('tree', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/i-family.svg'));
+    matIconRegistry.addSvgIcon('relation', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/i-relation.svg'));
+    matIconRegistry.addSvgIcon('add', this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../assets/i-plus.svg'));
+
+  }
+
   public HasImage() : any {
     if(this.characterInfo.Image.length == 0) 
       return {'background-color': "rgb(199, 199, 199)"};
     return {'background-image' : `url(${this.characterInfo.Image})`};
   }
-
-  public GetRightImage(pageType : string) : string{
-    switch(pageType){
-      case("note"): return "../../../../assets/i-noter.png";
-      case("tree"): return "../../../../assets/i-family-tree.png";
-      case("table"): return "../../../../assets/i-noter.png";
-      case("relation"):  return"../../../../assets/i-relation.png";
-      default: return "";
-    }
-  }
-  
 }
