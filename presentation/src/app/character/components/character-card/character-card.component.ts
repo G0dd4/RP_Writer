@@ -11,7 +11,7 @@ export class CharacterCardComponent implements OnInit{
   character!: Character;
 
   private maxDescriptionLength = 10
-  private maxFirstnameLength = 5
+  private maxFirstnameLength = 10
 
   ngOnInit(){
     console.log(this.character.Firstname);
