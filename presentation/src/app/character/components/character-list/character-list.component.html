@@ -1,5 +1,7 @@
 <div class="grid">
     <ng-container *ngFor="let character of this.characters">
-        <app-character-card  [character]="character"></app-character-card>
+        <a href="character-menu/character-page/{{character.Id}}">
+            <app-character-card [character]="character"></app-character-card>
+        </a>
     </ng-container>
 </div>

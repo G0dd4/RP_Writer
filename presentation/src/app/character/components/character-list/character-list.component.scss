@@ -1,14 +1,15 @@
 
-app-character-card{
-    margin-bottom: 20px;
-}
+
 
 @media (width >= 750px) {
     .grid {
+        place-content: center;
         display: grid;
-        grid-template-columns: 33% 33% 33%; /* Create 2 columns and auto-place rows */
+        grid-template-columns: 200px 200px 200px; /* Create 2 columns and auto-place rows */
+        gap : 0% 10% 
         
-    }        
+    }    
+    
 }
 
 @media (width < 750px) {
