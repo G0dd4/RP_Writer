@@ -1,23 +1,47 @@
-<div>
+<div class="admin-layout" 
+    [ngStyle]="{'grid-template-columns':GetNavBarState()?'20% 80%' : '5% 95%'
+}">
+    
     <div class="left-nav">
-        <div class="character-info" >
-            <div class="character-image" [ngStyle]="HasImage()">
-
+        <div class="character-info" (click)="ShowAndHideLeftNav()">
+            <div class="character-image">
+                <div class="rounded-element" [ngStyle]="{
+                    'height':GetNavBarState()? '100px':'50px',
+                    'width' :GetNavBarState()? '100px':'50px'
+                }">
+                    
+                </div>
             </div>
-            <div class="character-name">
-                <span>
+            <div class="character-name" [ngStyle]="{
+                'font-size':GetNavBarState()?'30px':'15px'
+            }">
                     {{characterInfo.Firstname}}  {{characterInfo.Lastname}}
-                </span>
             </div>
         </div>
-        <div class="search-bar">
 
+        <div class="search-field" 
+        [ngStyle]="{
+            'display':GetNavBarState()?'grid':'flex',
+            'grid-template-columns':GetNavBarState()?'10% 90%':'none'
+
+        }">
+            <mat-icon>search</mat-icon>
+            <input type="text" class="search-bar" name=""
+                *ngIf="GetNavBarState()"
+                placeholder="rechercher...">
         </div>
+        
         <div class="item-list">
-            <ol>
-                <li *ngFor="let item of this.pagesName">
+            <ol [ngStyle]="{
+                'margin-right':GetNavBarState()?'10%':'none',
+                'margin-left':GetNavBarState()?'10%':'none',
+                'padding':GetNavBarState()?'40px':'0px'
+            }">
+                <li *ngFor="let item of this.pagesName" [ngStyle]="{
+                    'padding':GetNavBarState()?'10px':'none',
+                }">
                     <mat-icon svgIcon="{{item.type}}"></mat-icon>
-                    <span>{{item.name}}</span>
+                    <span *ngIf="GetNavBarState()">{{item.name}}</span>
                 </li>
             </ol>
         </div>

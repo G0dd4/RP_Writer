@@ -19,6 +19,8 @@ export class NavCharacterComponent{
     Description : "RP Imperium"
   };
 
+  private navBarState : boolean =  true;
+
   pagesName : Array<{name: string,type: string}> = [
     {name: "First try", type: "note"},
     {name: "Family", type: "tree"},
@@ -41,5 +43,14 @@ export class NavCharacterComponent{
     if(this.characterInfo.Image.length == 0) 
       return {'background-color': "rgb(199, 199, 199)"};
     return {'background-image' : `url(${this.characterInfo.Image})`};
+  }
+
+  public GetNavBarState(){
+    return this.navBarState;
+  }
+
+  public ShowAndHideLeftNav(){
+    this.navBarState = !this.navBarState;
+    console.log(this.navBarState);
   }
 }
