@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace RP_Writer.Domain.Character
 {
     public class CharacterInfo
     {
-        public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Image { get; set; }
+        [BsonId]
+        public string? Id { get; set; }
+        [BsonIgnore]
+        public string? UserId { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string? Image { get; set; }
         public string? Description { get; set; }
     }
 }

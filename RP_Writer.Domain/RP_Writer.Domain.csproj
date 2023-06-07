@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="DocuSign.eSign.dll" Version="6.5.0" />
+    <PackageReference Include="MongoDB.Bson" Version="2.19.2" />
+  </ItemGroup>
+
 </Project>
