@@ -10,4 +10,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RP_Writer.Domain\RP_Writer.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
