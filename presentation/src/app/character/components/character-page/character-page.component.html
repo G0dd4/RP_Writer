@@ -1,3 +1,4 @@
-<app-nav-character>
-    
-</app-nav-character>
+<div *ngIf="characterInfo$ | async as character">
+    <app-nav-character [character]="character">
+    </app-nav-character>
+</div>

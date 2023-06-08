@@ -5,6 +5,7 @@ import { CharacterListComponent } from './components/character-list/character-li
 import { CharacterRoutingModule } from './character.routing.module';
 import { CoreModule } from '../core/core.module';
 import { CharacterPageComponent } from './components/character-page/character-page.component';
+import { CharacterInfoService } from './services/characterInfo.services';
 
 
 
@@ -18,6 +19,9 @@ import { CharacterPageComponent } from './components/character-page/character-pa
     CommonModule,
     CharacterRoutingModule,
     CoreModule
+  ],
+  providers: [
+    CharacterInfoService
   ]
 })
 export class CharacterModule { }

@@ -1,43 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Character } from '../../models/character-card.model';
+import { CharacterInfoService } from '../../services/characterInfo.services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-character-list',
   templateUrl: './character-list.component.html',
   styleUrls: ['./character-list.component.scss']
 })
-export class CharacterListComponent {
+export class CharacterListComponent implements OnInit{
 
-  public characters : Character[] = [
-    {
-      Id : 0,
-      Firstname : "Jimmy",
-      Lastname : "Jones",
-      Image : "../../../../assets/first.jpg",
-      Description : ""
-    },
-    {
-      Id : 1,
-      Firstname : "Archibal",
-      Lastname : "McKenzies",
-      Image : "../../../../assets/second.jpg",
-      Description : "RP Cosmos"
-    },
-    {
-      Id : 2,
-      Firstname : "Chip",
-      Lastname : "O'Brien",
-      Image : "../../../../assets/third.jpg",
-      Description : "RP Imperium"
-    },
-    {
-      Id : 3,
-      Firstname : "Dave",
-      Lastname : "Rumjacks",
-      Image : "",
-      Description : "RP Missclick"
-    }
-  ]
+  characterInfo$!: Observable<Character[]>
 
-  
+  constructor(
+    private characterInfoService:CharacterInfoService
+    ){}
+
+  ngOnInit(): void{
+    console.log("Gettting data")
+    this.characterInfo$ = this.characterInfoService.getCharacters().pipe();
+  } 
 }

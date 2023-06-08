@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Observable } from 'rxjs';
 import { Character } from 'src/app/character/models/character-card.model';
 
 
@@ -11,13 +12,9 @@ import { Character } from 'src/app/character/models/character-card.model';
 })
 export class NavCharacterComponent{
 
-  characterInfo : Character = {
-    Id : 2,
-    Firstname : "Chip",
-    Lastname : "O'Brien",
-    Image : "../../../../assets/third.jpg",
-    Description : "RP Imperium"
-  };
+  @Input()
+  character!: Character;
+  
 
   private navBarState : boolean =  true;
 
@@ -40,9 +37,9 @@ export class NavCharacterComponent{
   }
 
   public HasImage() : any {
-    if(this.characterInfo.Image.length == 0) 
+    if(this.character.image.length == 0) 
       return {'background-color': "rgb(199, 199, 199)"};
-    return {'background-image' : `url(${this.characterInfo.Image})`};
+    return {'background-image' : `url(${this.character.image})`};
   }
 
   public GetNavBarState(){
@@ -51,6 +48,5 @@ export class NavCharacterComponent{
 
   public ShowAndHideLeftNav(){
     this.navBarState = !this.navBarState;
-    console.log(this.navBarState);
   }
 }
