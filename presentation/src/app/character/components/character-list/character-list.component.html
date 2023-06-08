@@ -1,6 +1,6 @@
 <div class="grid">
-    <ng-container *ngFor="let character of this.characters">
-        <a href="character-menu/character-page/{{character.Id}}">
+    <ng-container *ngFor="let character of this.characterInfo$ | async" >
+        <a href="character-menu/character-page/{{character.id}}"> 
             <app-character-card [character]="character"></app-character-card>
         </a>
     </ng-container>

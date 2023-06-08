@@ -71,6 +71,11 @@
               "browserTarget": "presentation:build:development"
             }
           },
+          "options": {
+            "ssl": true,
+            "sslKey": "ssl\\server.key",
+            "sslCert": "ssl\\server.crt"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
